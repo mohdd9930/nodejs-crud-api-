@@ -37,14 +37,7 @@ npm install
 Create a `.env` file in the root directory and add the following:
 
 ```env
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/your-database-name
-```
-
-If using MongoDB Atlas:
-
-```env
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/your-database-name
+MONGO_URI=mongodb://localhost:27017/todo
 ```
 
 ### 4. Start the MongoDB Server (if using locally)
