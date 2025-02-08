@@ -65,19 +65,6 @@ If using nodemon for automatic restarts:
 npm run dev
 ```
 
-## Project Structure
-
-```
-|-- server.js
-|-- app.js
-|-- models/
-|   |-- model.js
-|-- routes/
-|   |-- routes.js
-|-- .env
-|-- package.json
-|-- README.md
-```
 
 ## API Endpoints
 
