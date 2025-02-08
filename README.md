@@ -58,72 +58,62 @@ If using nodemon for automatic restarts:
 npm run dev
 ```
 
+Instructions to test the CRUD API using Postman.
+
+## Prerequisites
+
+1. Install [Postman](https://www.postman.com/downloads/)
+2. Ensure your API server is running on `http://localhost:4000`
+
+## Importing Postman Collection
+
+1. Open Postman
+2. Click on `File -> Import`
+3. Select `Import From File`
+4. Choose the provided Postman JSON file
+5. Click `Import`
 
 ## API Endpoints
 
-### Create a Record
+### 1. Get All Todos
+- **Method:** `GET`
+- **URL:** `http://localhost:4000/api/todos/`
+- **Description:** Retrieves all todo items
 
-```http
-POST /api/data
+### 2. Create a Todo
+- **Method:** `POST`
+- **URL:** `http://localhost:4000/api/todos/`
+- **Body:**
+  ```json
+  {
+    "task": "Task 1",
+    "completed": false
+  }
+  ```
+- **Description:** Creates a new todo item
+
+### 3. Update a Todo
+- **Method:** `PUT`
+- **URL:** `http://localhost:4000/api/todos/:id`
+- **Body:**
+  ```json
+  {
+    "completed": true
+  }
+  ```
+- **Description:** Updates an existing todo item (replace `:id` with a valid ID)
+
+### 4. Delete a Todo
+- **Method:** `DELETE`
+- **URL:** `http://localhost:4000/api/todos/:id`
+- **Description:** Deletes a todo item (replace `:id` with a valid ID)
+
+## Running the API
+Ensure your backend server is running on `localhost:4000`. If using Node.js, run:
+```sh
+npm start
 ```
 
-Request Body (JSON):
+Now you can test the API using Postman!
 
-```json
-{
-  "name": "Example",
-  "email": "example@email.com"
-}
-```
-
-### Get All Records
-
-```http
-GET /api/data
-```
-
-### Get a Single Record
-
-```http
-GET /api/data/:id
-```
-
-### Update a Record
-
-```http
-PUT /api/data/:id
-```
-
-Request Body (JSON):
-
-```json
-{
-  "name": "Updated Name"
-}
-```
-
-### Delete a Record
-
-```http
-DELETE /api/data/:id
-```
-
-## Common Issues & Fixes
-
-- **Error: Could not connect to the database**
-
-  - Ensure MongoDB is running: `mongod`
-  - Check if the `MONGO_URI` in `.env` is correct
-
-- **npm start error: Missing script "start"**
-
-  - Ensure `package.json` contains:
-    ```json
-    "scripts": {
-      "start": "node server.js",
-      "dev": "nodemon server.js"
-    }
-    ```
-  - Run `npm run dev` instead of `npm start` if using `nodemon`
-.
 
